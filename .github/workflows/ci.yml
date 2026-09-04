@@ -1,0 +1,33 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  docker-build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Build backend image
+        run: |
+          docker build \
+            -f Dockerfile_backend \
+            -t ecommerce-backend:test \
+            ./server
+
+      - name: Build frontend image
+        run: |
+          docker build \
+            -f Dockerfile_frontend \
+            --build-arg REACT_APP_API_URL=http://localhost:5000 \
+            -t ecommerce-frontend:test \
+            ./client
