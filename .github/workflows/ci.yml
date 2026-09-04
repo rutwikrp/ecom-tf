@@ -20,14 +20,14 @@ jobs:
       - name: Build backend image
         run: |
           docker build \
-            -f Dockerfile_backend \
+            -f Dockerfile \
             -t ecommerce-backend:test \
             ./server
 
       - name: Build frontend image
         run: |
           docker build \
-            -f Dockerfile_frontend \
+            -f Dockerfile \
             --build-arg REACT_APP_API_URL=http://localhost:5000 \
             -t ecommerce-frontend:test \
             ./client
