@@ -1,5 +1,5 @@
 // Define the API URL with fallback to production URL
-const url = process.env.REACT_APP_API_URL || "https://studio-chairs.vercel.app";
+const url = "/api";
 
 export const registerUser = async (userObj) => {
   try {

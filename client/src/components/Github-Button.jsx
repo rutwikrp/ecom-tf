@@ -3,7 +3,7 @@ import { Github } from "lucide-react";
 import { Spinner } from "./Spinner";
 
 export const GitHubButton = () => {
-    const url = process.env.REACT_APP_API_URL;
+    const url = "/api";
     const [isLoading, setIsLoading] = useState(false)
 
     // Redirects to GitHub authentication
