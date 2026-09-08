@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useState } from "react";
 
-const url = process.env.REACT_APP_API_URL;
+const url = "/api";
 
 console.log(url);
 

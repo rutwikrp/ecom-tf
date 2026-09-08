@@ -1,4 +1,4 @@
-const url = process.env.REACT_APP_API_URL;
+const url = "/api";
 
 
 // Initiate checkout session
